@@ -1,5 +1,5 @@
-import { Head } from 'next/document';
-import React, { FC } from 'react';
+
+import { FC } from 'react';
 import * as Header from './Header.styles';
 
 const StyledHeader: FC = () => {
