@@ -4,7 +4,6 @@ import { getData, getCubicWeight } from 'Utilities/mixins';
 import Header from 'Components/Header';
 import Dropdown from 'Components/Dropdown';
 import { StyledH2, StyledH4 } from 'Styles/Font.styles';
-import { Callback } from 'downshift';
 export interface Items {
   category: string;
   title: string;
