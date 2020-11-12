@@ -1,5 +1,4 @@
-import { SetStateAction, SyntheticEvent } from "react";
-import { CubicWeightResult } from "pages";
+import { SyntheticEvent } from "react";
 import { Callback } from "downshift";
 
 export interface DropdownProps {
