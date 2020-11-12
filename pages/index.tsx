@@ -4,6 +4,7 @@ import { getData, getCubicWeight } from 'Utilities/mixins';
 import Header from 'Components/Header';
 import Dropdown from 'Components/Dropdown';
 import { StyledH2, StyledH4 } from 'Styles/Font.styles';
+import { Callback } from 'downshift';
 export interface Items {
   category: string;
   title: string;
@@ -30,9 +31,9 @@ const Home: FC<HomeProps> = ({ items }) => {
     setCubicWeight(getCubicWeight(items, value))
   }
 
-  const clear = (event: SyntheticEvent<any, Event>) =>{ 
+  const clear = (event: SyntheticEvent<any, Event>): void =>{ 
     event.preventDefault();
-    setCubicWeight({ category: '', averageWeight: '' })
+    return setCubicWeight({ category: '', averageWeight: '' })
   }
 
   const options = [...new Set(items.map(({ category }) => category))]
