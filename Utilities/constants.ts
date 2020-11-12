@@ -1,0 +1,1 @@
+export const API_ENDPOINT = 'http://wp8m3he1wt.s3-website-ap-southeast-2.amazonaws.com';
