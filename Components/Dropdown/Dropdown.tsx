@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { FC, SyntheticEvent } from 'react';
 import Downshift from 'downshift'
 import { Form, Input, SelectList, SelectListItem, InputContainer, Button } from './Dropdown.styles';
 import { DropdownProps } from './Dropdown.types';
 
 
-const Dropdown: FC<DropdownProps> = ({ options, onChange }) => {
+const Dropdown: FC<DropdownProps> = ({ options, onChange, clear }) => {
   return (
     <Downshift
       onChange={(selection) =>
@@ -26,7 +26,7 @@ const Dropdown: FC<DropdownProps> = ({ options, onChange }) => {
           <Form {...getRootProps()}>
             <InputContainer>
               <Input {...getInputProps({ onFocus: () => openMenu() }) as any} isActive={isOpen} />
-              <Button onClick={() => clearSelection()}>x</Button>
+              <Button onClick={(event: SyntheticEvent<any, Event>) => clearSelection(clear(event))}>x</Button>
             </InputContainer>
             <SelectList {...getMenuProps()} isActive={isOpen}>
               {isOpen &&

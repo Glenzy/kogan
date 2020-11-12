@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, SyntheticEvent, useState } from 'react';
 import GlobalStyles from 'Styles';
 import { getData, getCubicWeight } from 'Utilities/mixins';
 import Header from 'Components/Header';
@@ -22,13 +22,19 @@ interface HomeProps {
 }
 
 const Home: FC<HomeProps> = ({ items }) => {
-
-  const [cubicWeight, setCubicWeight] = useState<CubicWeightResult>(getCubicWeight(items, 'Air Conditioners'));
+  const initialState = getCubicWeight(items, 'Air Conditioners') 
+  const [cubicWeight, setCubicWeight] = useState<CubicWeightResult>(initialState);
 
   const handleSelection = (value: string) => {
     if (value.length === 0) return;
     setCubicWeight(getCubicWeight(items, value))
   }
+
+  const clear = (event: SyntheticEvent<any, Event>) =>{ 
+    event.preventDefault();
+    setCubicWeight({ category: '', averageWeight: '' })
+  }
+
   const options = [...new Set(items.map(({ category }) => category))]
 
   return (
@@ -36,7 +42,7 @@ const Home: FC<HomeProps> = ({ items }) => {
       <GlobalStyles />
       <Header />
       <StyledH2 align="center">Calculate Average Cubic Weight</StyledH2>
-      <Dropdown onChange={handleSelection} options={options} />
+      <Dropdown onChange={handleSelection} options={options} clear={clear}/>
       <StyledH4 align="center">{cubicWeight?.category}: {cubicWeight.averageWeight} kg</StyledH4>
     </>
   )
