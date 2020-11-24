@@ -14,7 +14,7 @@ const StyledHeader: FC = () => {
             <Header.StyledLogo src="logo.png" alt="Kogan logo" />
           </Header.Logo>
           <Header.StyledHeaderType>
-            {router.asPath === '/lightning-talk' ?' Lightning Talk - React Performance' : 'Coding Challenge'}
+            {router.asPath === '/lightning-talk' ? ' Lightning Talk - React Performance' : 'Coding Challenge'}
           </Header.StyledHeaderType>
           <Header.LinkWrapper>
             <Link href='/'><Header.StyledLink active={router.asPath === '/'}>Home</Header.StyledLink></Link>

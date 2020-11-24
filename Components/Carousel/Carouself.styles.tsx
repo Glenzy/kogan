@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import { Slider } from 'pure-react-carousel';
 
 
 export const StyledSlider = styled(Slider)`

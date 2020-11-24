@@ -22,7 +22,7 @@ interface HomeProps {
 }
 
 const Home: FC<HomeProps> = ({ items }) => {
-  const initialState = getCubicWeight(items, 'Air Conditioners') 
+  const initialState = getCubicWeight(items, 'Air Conditioners')
   const [cubicWeight, setCubicWeight] = useState<CubicWeightResult>(initialState);
 
   const handleSelection = (value: string) => {
@@ -30,7 +30,7 @@ const Home: FC<HomeProps> = ({ items }) => {
     setCubicWeight(getCubicWeight(items, value))
   }
 
-  const clear = (event: SyntheticEvent<any, Event>): void =>{ 
+  const clear = (event: SyntheticEvent<any, Event>): void => {
     event.preventDefault();
     return setCubicWeight({ category: '', averageWeight: '' })
   }
@@ -40,7 +40,7 @@ const Home: FC<HomeProps> = ({ items }) => {
   return (
     <>
       <StyledH2 align="center">Calculate Average Cubic Weight</StyledH2>
-      <Dropdown onChange={handleSelection} options={options} clear={clear}/>
+      <Dropdown onChange={handleSelection} options={options} clear={clear} />
       <StyledH4 align="center">{cubicWeight?.category}: {cubicWeight.averageWeight} kg</StyledH4>
     </>
   )
