@@ -39,8 +39,6 @@ const Home: FC<HomeProps> = ({ items }) => {
 
   return (
     <>
-      <GlobalStyles />
-      <Header />
       <StyledH2 align="center">Calculate Average Cubic Weight</StyledH2>
       <Dropdown onChange={handleSelection} options={options} clear={clear}/>
       <StyledH4 align="center">{cubicWeight?.category}: {cubicWeight.averageWeight} kg</StyledH4>

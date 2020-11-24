@@ -13,8 +13,10 @@
     "babel-plugin-transform-define": "^2.0.0",
     "cross-env": "^7.0.2",
     "next": "latest",
+    "pure-react-carousel": "^1.27.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-grid-system": "^7.1.1",
     "react-is": "^17.0.1"
   },
   "devDependencies": {

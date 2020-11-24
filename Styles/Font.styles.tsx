@@ -12,3 +12,9 @@ export const StyledH4 = styled.h4<{ align?: Alignments }>`
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 `
+export const StyledH1 = styled.h1<{ align?: Alignments }>`
+  ${({ align }) => `text-align: ${align ? align : 'left'}`};
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+`
+
