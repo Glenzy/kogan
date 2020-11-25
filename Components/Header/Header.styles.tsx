@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Link from 'next/link'
 
 export const HEIGHT = '7.2rem';
 export const ITEM_HEIGHT = '5.6rem';
