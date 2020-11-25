@@ -1,7 +1,5 @@
 import { FC, SyntheticEvent, useState } from 'react';
-import GlobalStyles from 'Styles';
 import { getData, getCubicWeight } from 'Utilities/mixins';
-import Header from 'Components/Header';
 import Dropdown from 'Components/Dropdown';
 import { StyledH2, StyledH4 } from 'Styles/Font.styles';
 export interface Items {
